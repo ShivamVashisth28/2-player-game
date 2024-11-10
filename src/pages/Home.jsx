@@ -13,6 +13,7 @@ function Home() {
           }}
         >
           Game
+        
         </button>
       </div>
     </div>
