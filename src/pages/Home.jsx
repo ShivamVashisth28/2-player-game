@@ -5,7 +5,7 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      <div>Home</div>
+      <div>Smashers</div>
       <div className="border-black border-2 w-14 m-20">
         <button
           onClick={() => {
