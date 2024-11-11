@@ -1,0 +1,54 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  height: 100vh;
+  width: 100vw;
+}
+
+.principal {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: rgb(71, 1, 65);
+  background: linear-gradient(
+    302deg,
+    rgba(71, 1, 65, 1) 0%,
+    rgba(16, 104, 190, 1) 34%,
+    rgba(7, 52, 149, 1) 52%,
+    rgba(5, 99, 180, 1) 68%,
+    rgba(3, 141, 208, 1) 84%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-top: 2rem;
+}
+#game-button {
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 10px 10px 56px 16px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 10px 10px 56px 16px rgba(0, 0, 0, 0.48);
+  box-shadow: 10px 10px 56px 16px rgba(0, 0, 0, 0.48);
+  transition: all 0.3s ease;
+}
+#game-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
