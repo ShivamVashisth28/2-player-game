@@ -7,10 +7,10 @@ function GameArea() {
     const [cpuScore, setCpuScore] = useState(0)
 
     const checkWinner = (userChoice, cpuChoice) => {
-        if(userChoice == "stone" && cpuChoice == "scissor"){
+        if(userChoice == "rock" && cpuChoice == "scissor"){
             return "win";
         }
-        else if(userChoice == "paper" && cpuChoice == "stone"){
+        else if(userChoice == "paper" && cpuChoice == "rock"){
             return "win";
         }
         else if(userChoice == "scissor" && cpuChoice == "paper"){
@@ -27,7 +27,7 @@ function GameArea() {
 
     const submitBtn = () =>{
         const random = Math.floor(Math.random() * 3) 
-        const choices = ["scissor","stone","paper"];
+        const choices = ["scissor","rock","paper"];
         
         const cpuChoice = choices[random];
         setCpuChoice(cpuChoice)
@@ -50,65 +50,88 @@ function GameArea() {
         setUserScore(0)
     }
   return (
-    <div className='flex flex-col items-center '>
-            <div 
-                className={`border-2 border-black text-2xl w-[30%] rounded-lg m-2 text-center hover:scale-110 hover:bg-red-300 ${userChoice==='stone' ? "bg-red-400" : "bg-white"} cursor-pointer`}
-                onClick={()=> setUserChoice("stone") }
-            >
-                STONE
+    <div className='flex flex-col items-center  justify-center w-[80%]' >
+    
+            <div className='w-full h-[50%] flex flex-row justify-center gap-x-24 text-2xl text-indigo-800'>
+                <div className='flex flex-col items-center '>
+                    <label >Player</label>
+                    <div className='w-44 h-44 bg-indigo-800 content-center rounded-full border-4 border-indigo-900'>
+                        {
+                            userChoice !=="" ? <img className='w-[50%] block m-auto' src={`/rockPaperScissor/${userChoice}.svg`}/> : null
+                        }
+                    </div>
+                    <label>Score: { userScore }</label>
+                </div>
+                
+                <div className='w-44 h-44 mt-6 rounded-full content-center items-center flex'>
+                    <img className='w-36 block m-auto' src="/rockPaperScissor/vs.svg"/>
+                </div>
+
+                <div className='flex flex-col items-center '>
+                    <label>Computer</label>
+                        <div className='w-44 h-44 bg-indigo-800 content-center rounded-full border-4 border-indigo-900'>
+                            {
+                                cpuChoice !=="" ? <img className='w-[50%] block m-auto' src={`/rockPaperScissor/${cpuChoice}.svg`}/> : null
+                            }
+                        </div>
+                    <label>Score: { cpuScore }</label>
+                </div>
             </div>
 
-            <div 
-                className={`border-2 border-black text-2xl w-[30%] rounded-lg m-2 text-center hover:scale-110 hover:bg-red-300 ${userChoice==='paper' ? "bg-red-400" : "bg-white"} cursor-pointer`}
-                onClick={()=> setUserChoice("paper") }
-            >
-                PAPER
-            </div>
+            <div className='flex flex-col justify-center'>
 
-            <div 
-                className={`border-2 border-black text-2xl w-[30%] rounded-lg m-2 text-center hover:scale-110 hover:bg-red-300 ${userChoice==='scissor' ? "bg-red-400" : "bg-white"} cursor-pointer`}
-                onClick={()=> setUserChoice("scissor") }
-            >
-                SCISSOR
+                <div className='flex flex-row w-full justify-center justify-around	'>
+                    {/* ROCK */}
+
+                    <button type="button" className={`border-2 border-indigo-800 text-xl rounded-lg m-1 hover:bg-indigo-800 hover:text-white  text-indigo-800 bg-white-800 focus:outline-none focus:ring-4 focus:ring-gray-300 px-8 py-1.5`}
+                        onClick={()=> {
+                            setUserChoice("rock") 
+                            setCpuChoice("") 
+                        }}>Rock</button>
+            
+                    {/* PAPER */}
+                    <button 
+                        className={`border-2 border-indigo-800 text-xl rounded-lg m-1 hover:bg-indigo-800 hover:text-white  text-indigo-800 bg-white-800 focus:outline-none focus:ring-4 focus:ring-gray-300 px-8 py-1.5`}
+                        onClick={()=> {
+                            setUserChoice("paper")
+                            setCpuChoice("")
+                        } 
+                        }
+                    >
+                        Paper
+                    </button>
+            
+                    {/* SCISSOR */}
+                    <button 
+                        className={`border-2 border-indigo-800 text-xl rounded-lg m-1 hover:bg-indigo-800 hover:text-white  text-indigo-800 bg-white-800 focus:outline-none focus:ring-4 focus:ring-gray-300 px-8 py-1.5`}
+                        onClick={()=> {
+                            setUserChoice("scissor") 
+                            setCpuChoice("") 
+                        } }
+                    >
+                        Scissor
+                    </button>
+                </div>
+
+                <div className='flex flex-col w-full'>
+                {/* SUBMIT */}
+                <button 
+                    className={`border-2 border-indigo-800 text-xl rounded-lg m-1 hover:bg-indigo-800 hover:text-white  text-indigo-800 bg-white-800 focus:outline-none focus:ring-4 focus:ring-gray-300 px-8 py-1.5`}
+                    onClick={()=> submitBtn() }
+                >
+                    Submit
+                </button>
+
+                <button 
+                    className={`border-2 border-indigo-800 text-xl rounded-lg m-1 hover:bg-indigo-800 hover:text-white  text-indigo-800 bg-white-800 focus:outline-none focus:ring-4 focus:ring-gray-300 px-8 py-1.5`}
+                    onClick={()=> refreshBtn()}
+                >
+                    Refresh
+                </button>
+                </div>
+
             </div>
             
-            <div 
-                className={`border-2 border-black text-3xl w-[50%] rounded-lg m-2 mt-5 p-2 text-center hover:scale-110 hover:bg-red-400 cursor-pointer`}
-                onClick={()=> submitBtn() }
-            >
-                SUBMIT
-            </div>
-            
-            {
-                cpuChoice !=="" ?
-            <div>
-                CPU CHOICE : {cpuChoice}
-            </div>
-            : null
-            }
-
-            {
-                userChoice !=="" ?
-            <div>
-                USER CHOICE : {userChoice}
-            </div>
-            : null
-            }
-
-            <div>
-                USER SCORE : {userScore}
-            </div>
-
-            <div>
-                CPU SCORE : {cpuScore}
-            </div>
-
-            <div 
-                className='m-2 border-2 border-black rounded-md p-1 cursor-pointer hover:bg-fuchsia-100'
-                onClick={()=> refreshBtn()}
-            >
-                refresh
-            </div>
     </div>
   )
 }
