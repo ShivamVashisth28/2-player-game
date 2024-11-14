@@ -34,11 +34,11 @@ function GameArea() {
         if(checkWinner(userChoice,cpuChoice) === "win"){
             setUserScore((prev) => prev+1);
         }
-        else if(checkWinner(userChoice,cpuChoice) === "draw"){
-            setCpuScore((prev) => prev+1);
-            setUserScore((prev) => prev+1);
-        }
-        else{
+        // else if(checkWinner(userChoice,cpuChoice) === "draw"){
+            // setCpuScore((prev) => prev);
+            // setUserScore((prev) => prev);
+        // }
+        else if(checkWinner(userChoice,cpuChoice) === "lose"){
             setCpuScore((prev) => prev+1);
         }
     }
