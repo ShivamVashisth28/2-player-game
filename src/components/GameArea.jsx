@@ -35,8 +35,8 @@ function GameArea() {
             setUserScore((prev) => prev+1);
         }
         else if(checkWinner(userChoice,cpuChoice) === "draw"){
-            setCpuScore((prev) => prev);
-            setUserScore((prev) => prev);
+            // setCpuScore((prev) => prev);
+            // setUserScore((prev) => prev);
         }
         else{
             setCpuScore((prev) => prev+1);
