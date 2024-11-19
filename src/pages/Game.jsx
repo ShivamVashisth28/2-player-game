@@ -18,20 +18,20 @@ function Game() {
       link : "/game/bounce",
     },
     {
-      name : 'Bounce',
-      link : "/game/bounce",
+      name : 'Minesweeper',
+      link : "/game/minesweeper",
     },
     {
-      name : 'Bounce',
-      link : "/game/bounce",
+      name : 'Flappy bird',
+      link : "/game/flappybird",
     },
     {
-      name : 'Bounce',
-      link : "/game/bounce",
+      name : 'Cricket',
+      link : "/game/cricket",
     },
     {
-      name : 'Bounce',
-      link : "/game/bounce",
+      name : 'Soccer',
+      link : "/game/soccer",
     },
 
   ]
