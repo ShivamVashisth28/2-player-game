@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SnakeGame from '../../components/SnakeGame/SnakeGame';
+import "../../styles/snake.css"
 
 function Snake() {
   

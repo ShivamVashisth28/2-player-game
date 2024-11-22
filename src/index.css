@@ -3,9 +3,3 @@
 @tailwind utilities;
 
 
-.snake{
-    background-color: brown;
-    height: 30px;
-    width: 30px;
-    border: 2px black solid;
-}
