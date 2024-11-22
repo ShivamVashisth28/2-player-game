@@ -1,0 +1,15 @@
+.snake{
+    background-color: brown;
+    height: 30px;
+    width: 30px;
+    border: 2px black solid;
+}
+
+.rat{
+    background-color: pink;
+    border: black solid 2px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: relative;
+}
