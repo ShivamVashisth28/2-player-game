@@ -37,7 +37,10 @@ function Game() {
   ]
 
   return (
-    <div className='h-screen w-screen '>
+    <div className='h-screen w-screen bg-violet-200 '>
+      <div className='flex justify-center pt-5 text-4xl font-bold '>
+        Two Player Games 
+      </div>
       <div className='flex flex-col items-center pt-10 gap-[2vh]'>
           {
             gameList.map((game, index) => 
